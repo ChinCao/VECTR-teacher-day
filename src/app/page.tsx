@@ -6,13 +6,13 @@ import { ENGLISH_PROMPT, VIETNAMESE_PROMPT } from "@/constants/promp";
 
 export default function Home() {
   const number_of_cards = 5;
-  const number_of_prompts = ENGLISH_PROMPT.length;
+  const number_of_prompts = ENGLISH_PROMPT.length - 1;
   const [card, setCard] = useState(1);
   const [prompt, setPrompt] = useState(1);
 
   useEffect(() => {
     setCard(Math.floor(Math.random() * number_of_cards) + 1);
-    setPrompt(Math.floor(Math.random() * number_of_prompts));
+    setPrompt(Math.floor(Math.random() * number_of_prompts + 1));
   }, [number_of_prompts]);
 
   const nextElement = () => {
@@ -49,7 +49,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.letter_container}>
           <Image
-            src={`/Card${card}/letter.png`}
+            src={`/Card${card}/letter.webp`}
             height={707}
             width={504}
             alt="letter"
