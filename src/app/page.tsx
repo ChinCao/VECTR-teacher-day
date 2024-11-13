@@ -80,7 +80,7 @@ export default function Home() {
           <button onClick={nextElement} className={styles.switch_button}>
             Đổi/Change{" "}
             <Image
-              src={`/vectr.png`}
+              src={`/favicon.ico`}
               height={20}
               width={20}
               alt="VECTR LOGO"
