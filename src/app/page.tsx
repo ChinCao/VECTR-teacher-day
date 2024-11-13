@@ -22,7 +22,7 @@ export default function Home() {
       setCard(1);
     }
     if (prompt < number_of_prompts) {
-      setPrompt(card + 1);
+      setPrompt(prompt + 1);
     } else {
       setPrompt(1);
     }
