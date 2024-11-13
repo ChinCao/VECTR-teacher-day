@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     setCard(Math.floor(Math.random() * number_of_cards) + 1);
-    setPrompt(Math.floor(Math.random() * number_of_prompts) + 1);
+    setPrompt(Math.floor(Math.random() * number_of_prompts));
   }, [number_of_prompts]);
 
   const nextElement = () => {
