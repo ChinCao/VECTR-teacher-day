@@ -54,6 +54,7 @@ export default function Home() {
             width={504}
             alt="letter"
             className={styles.letter}
+            priority
           />
           <div
             className={styles.text_container}
@@ -74,6 +75,7 @@ export default function Home() {
             width={438}
             alt="letter"
             className={styles.envelope}
+            priority
           />
           <button onClick={nextElement} className={styles.switch_button}>
             Đổi/Change{" "}
