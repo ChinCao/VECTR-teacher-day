@@ -15,14 +15,11 @@
   width: 10rem;
 }
 
-.container img {
-  pointer-events: none;
-}
-
 .letter_container {
   z-index: 1;
   right: -33%;
   position: absolute;
+  pointer-events: none;
 }
 
 .text_container {
@@ -32,7 +29,6 @@
   justify-content: center;
   gap: 25px;
   position: absolute;
-  pointer-events: none;
   font-size: 15px;
   top: 31%;
   width: 60%;
@@ -58,6 +54,7 @@
 .envelope_container {
   position: absolute;
   left: 30%;
+  cursor: pointer;
 }
 
 .envelope {
@@ -67,18 +64,27 @@
     4.5px 2.8px 7.2px -1px hsl(var(--shadow-color) / 0.16);
 }
 
-.switch_button {
+.envelope_container:hover {
+  transform: scale(1.01);
+}
+
+.envelope_container:active {
+  transform: scale(1);
+}
+
+.label {
   right: 9%;
   bottom: 3%;
   width: 200px;
   height: 30px;
   position: absolute;
   z-index: 3;
-  border: 1px solid #f16e22;
-  font-family: var(--font-playfair);
+  font-size: 30px;
+  font-family: var(--font-meow);
   cursor: pointer;
   display: flex;
   align-items: center;
+  font-weight: 100;
   justify-content: center;
   gap: 10px;
 }
@@ -103,7 +109,7 @@
     bottom: -29%;
   }
 
-  .switch_button {
+  .label {
     right: 27%;
     bottom: 20%;
   }
