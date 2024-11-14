@@ -57,6 +57,8 @@ export default function Home() {
     <body
       style={{
         backgroundImage: `url("/Card${card}/background.jpeg")`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
       className={`${BaskervvilleSC.variable} ${PlayFairDisplay.variable} ${MeowScript.variable}`}
     >
