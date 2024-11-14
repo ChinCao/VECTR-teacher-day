@@ -2,21 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
-import { ENGLISH_PROMPT, VIETNAMESE_PROMPT } from "@/constants/promp";
-import localFont from "next/font/local";
-
-const BaskervvilleSC = localFont({
-  src: "../fonts/Baskervville_SC/BaskervvilleSC-Regular.ttf",
-  variable: "--font-basker",
-});
-const PlayFairDisplay = localFont({
-  src: "../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf",
-  variable: "--font-playfair",
-});
-const MeowScript = localFont({
-  src: "../fonts/Meow_Script/MeowScript-Regular.ttf",
-  variable: "--font-meow",
-});
+import { ENGLISH_PROMPT, VIETNAMESE_PROMPT } from "@/constants/general_promp";
 
 export default function Home() {
   const number_of_cards = 5;
@@ -54,51 +40,47 @@ export default function Home() {
   };
 
   return (
-    <body
+    <div
+      className={styles.page}
       style={{
         backgroundImage: `url("/Card${card}/background.jpeg")`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
       }}
-      className={`${BaskervvilleSC.variable} ${PlayFairDisplay.variable} ${MeowScript.variable}`}
     >
-      <div className={styles.page}>
-        <div className={styles.container}>
-          <div className={styles.letter_container}>
-            <Image
-              src={`/Card${card}/letter.webp`}
-              height={707}
-              width={504}
-              alt="letter"
-              className={styles.letter}
-              priority
-            />
-            <div
-              className={styles.text_container}
-              style={{
-                width: adjustCSS("width"),
-                top: adjustCSS("top"),
-                left: adjustCSS("left"),
-              }}
-            >
-              <p className={styles.vietnamese}>{VIETNAMESE_PROMPT[prompt]}</p>
-              <p className={styles.english}>{ENGLISH_PROMPT[prompt]}</p>
-            </div>
-          </div>
-          <div className={styles.envelope_container}>
-            <Image
-              src={`/Card${card}/envelope.png`}
-              height={614}
-              width={438}
-              onClick={nextElement}
-              alt="letter"
-              className={styles.envelope}
-              priority
-            />
-            <h1 className={styles.label}>Đổi/Change </h1>
+      <div className={styles.container}>
+        <div className={styles.letter_container}>
+          <Image
+            src={`/Card${card}/letter.webp`}
+            height={707}
+            width={504}
+            alt="letter"
+            className={styles.letter}
+            priority
+          />
+          <div
+            className={styles.text_container}
+            style={{
+              width: adjustCSS("width"),
+              top: adjustCSS("top"),
+              left: adjustCSS("left"),
+            }}
+          >
+            <p className={styles.vietnamese}>{VIETNAMESE_PROMPT[prompt]}</p>
+            <p className={styles.english}>{ENGLISH_PROMPT[prompt]}</p>
           </div>
         </div>
+        <div className={styles.envelope_container}>
+          <Image
+            src={`/Card${card}/envelope.png`}
+            height={614}
+            width={438}
+            onClick={nextElement}
+            alt="letter"
+            className={styles.envelope}
+            priority
+          />
+          <h1 className={styles.label}>Đổi/Change </h1>
+        </div>
       </div>
-    </body>
+    </div>
   );
 }

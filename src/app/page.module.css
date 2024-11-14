@@ -1,9 +1,11 @@
 .page {
-  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
+  background-size: cover;
   justify-content: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -85,6 +87,12 @@
   font-weight: 100;
   justify-content: center;
   gap: 10px;
+}
+
+@media (max-width: 1240px) {
+  .page {
+    min-height: calc(100vh + 300px);
+  }
 }
 
 @media (max-width: 840px) {
