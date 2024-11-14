@@ -11,14 +11,12 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  card: number; // Add card prop here
 }>) {
   return (
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-
       {children}
     </html>
   );
